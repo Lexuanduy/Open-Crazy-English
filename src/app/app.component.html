@@ -1,8 +1,17 @@
 <!--The content below is only a placeholder and can be replaced.-->
+<div *ngIf="afAuth.user | async as user; else showLogin">
+  <h1>Hello {{ user.displayName }}!</h1>
+  <button (click)="logout()">Logout</button>
+</div>
+<ng-template #showLogin>
+  <p>Please login.</p>
+  <button (click)="login()">Login with Google</button>
+</ng-template>
 <ul>
   <li class="text" *ngFor="let user of users | async">
     {{user.first}}
   </li>
 </ul>
+<app-signin></app-signin>
 
 <!-- <router-outlet></router-outlet> -->
