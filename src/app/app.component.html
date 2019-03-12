@@ -1,9 +1,128 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div *ngIf="afAuth.user | async as user; else showLogin">
-  <h1>Hello {{ user.displayName }}!</h1>
+<div class="bgBackdrop"></div>
+<header>
+  <nav class="navbar navbar-expand-lg align-items-center" id="cecNavbar">
+    <a class="navbar-brand" href="/">
+      <!-- logo -->
+      <img src="" alt="">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="mdi mdi-menu"></i>
+    </button>
+    <div class="collapse navbar-collapse transition" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto align-items-center">
+        <li class="nav-item d-block d-xl-none d-lg-none">
+          <a href="/">
+            <!-- logo -->
+            <img class="logo" src="" alt="">
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#intro">Intro <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#events">Events</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#cecGames">Games</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#members">Members</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#latestNews">News</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/gallery">Gallery</a>
+        </li>
+
+        <li class="nav-item">
+          <div class="dropdown userDropdown">
+            <button class="dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
+              <a href="/profile"><img src="//graph.facebook.com/488857841634271/picture?type=square" width="50"
+                  class="avatar"></a>
+              <span class="d-inline d-xl-none d-lg-none">Duy Lê</span>
+            </button>
+            <!-- authen -->
+            <div *ngIf="afAuth.user | async as user; else showLogin">
+              <p>{{ user.displayName }}!</p>
+              <button (click)="logout()">Logout</button>
+            </div>
+            <!-- app signin -->
+            <app-signin></app-signin>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="http://user.cec.net.vn">Thông tin cá nhân</a>
+              <a class="dropdown-item" href="#">Yêu cầu chữa bài</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="/logout" onclick="logout()">Logout</a>
+            </div>
+          </div>
+        </li>
+
+
+      </ul>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="content">
+  <!-- app lesson -->
+  <app-lesson></app-lesson>
+</div>
+<footer id="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <!-- logo -->
+        <p><a href="/"><img class="logo" src="" alt="" width="110"></a></p>
+      </div>
+      <div class="col-md-9">
+        <div class="row">
+          <div class="col-xl-3 col-lg-3 col-md-3 col-6">
+            <h4 class="title">Products</h4>
+            <ul class="footerMenu list-unstyled">
+              <li><a href="https://speech.cec.net.vn/" target="_blank">Speech</a></li>
+              <li><a href="https://media.cec.net.vn" target="_blank">Record</a></li>
+              <li><a href="https://talk.cec.net.vn" target="_blank">Talk</a></li>
+            </ul>
+          </div>
+          <div class="col-xl-3 col-lg-3 col-md-3 col-6">
+            <h4 class="title">CEC</h4>
+            <ul class="footerMenu list-unstyled">
+              <li><a href="/about">About CEC</a></li>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Members</a></li>
+              <li><a href="/gallery/gallery-1">Gallery</a></li>
+            </ul>
+          </div>
+          <div class="col-xl-3 col-lg-3 col-md-3 col-6">
+            <h4 class="title">Support</h4>
+            <ul class="footerMenu list-unstyled">
+              <li><a href="/volunteer">Volunteer at CEC</a></li>
+              <li><a href="/support">How to help us</a></li>
+            </ul>
+          </div>
+          <div class="col-xl-3 col-lg-3 col-md-3 col-6">
+            <h4 class="title">Follow Us</h4>
+            <ul class="footerMenu list-unstyled">
+              <li><a href="#">Facebook</a></li>
+              <li><a href="#">Youtube</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<!--<div *ngIf="afAuth.user | async as user; else showLogin">
+  <p>{{ user.displayName }}!</p>
   <button (click)="logout()">Logout</button>
 </div>
-<ng-template #showLogin>
+ <ng-template #showLogin>
   <p>Please login.</p>
   <button (click)="login()">Login with Google</button>
 </ng-template>
@@ -11,7 +130,7 @@
   <li class="text" *ngFor="let user of users | async">
     {{user.first}}
   </li>
-</ul>
-<app-signin></app-signin>
+</ul> 
+<app-signin></app-signin>-->
 
 <!-- <router-outlet></router-outlet> -->
