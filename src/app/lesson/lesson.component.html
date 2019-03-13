@@ -14,13 +14,36 @@
   <section class="lessonInfo">
     <div class="container">
       <div class="row">
-        <div class="col-md-6 offset-md-3">
+        <div class="col-md-3">
+          <h3 class="text-left"><a href="">Guide</a></h3>
+          <p>- To learn this lesson best, learn the topic of this lesson in two images below the video of the CEC
+            lecturer.</p>
+          <p>- Pay attention to what the teacher says in the audio.</p>
+          <p>- Once you understand what the teacher said in the audio, pay attention to watch, listen and follow the
+            lectures of the CEC lecturer in the video.</p>
+          <p>- Combined with the vocabulary and pronunciation in the two images below the video to contact the lecture
+            directly, it will help you achieve the best results after this lesson.</p>
+        </div>
+        <div class="col-md-6">
           <h3>Audio</h3>
           <audio [src]="(lesson | async)?.audioURL" controls class="mb-5">
           </audio>
           <h3>Video Instruction</h3>
           <video width="320" height="240" [src]="(lesson | async)?.videoURL" controls>
           </video>
+        </div>
+        <div class="col-md-3">
+          <h3 class="text-left"><a href="">Mission</a></h3>
+          <h4>Ask yourself these questions: </h4>
+          <p>- What skills will I gain after this lesson?</p>
+          <p>- After this lesson I will learn more new words and how to pronounce them?</p>
+          <p>- And the most important thing is how to acquire the lesson in the fastest way? To be able to perform the
+            next task.</p>
+          <p>- After can follow the instructions and instructions on how to do it. Make yourself a video, in that video,
+            repeat what you learned in English and upload your video to CEC <a href> here </a> so we can censor that you
+            have completed the lesson this or not.</p>
+          <p>- Only after completing this lesson can you learn the next lessons on the CEC.</p>
+          <h5 style="color:green;">Wish you success, learn useful and fun things !!!</h5>
         </div>
       </div>
       <hr class="mb-5 mt-5">
