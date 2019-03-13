@@ -43,8 +43,8 @@
           </ng-template>
           <div *ngIf="afAuth.user | async as user; else showLogin">
             <!-- <p style="margin-bottom: 0;">{{ user.displayName }}</p> -->
-            <p>{{ user.displayName }}</p>
-            <!-- <a href="/profile"><img src="//graph.facebook.com/488857841634271/picture?type=square" width="50" class="avatar"></a> -->
+            <!-- <p>{{ user.displayName }}</p> -->
+            <a href="/profile"><img [src]="user.photoURL" width="50" class="avatar"></a>
             <button (click)="logout()">Logout</button>
           </div>
         </li>
